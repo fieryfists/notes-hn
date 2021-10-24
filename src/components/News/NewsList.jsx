@@ -98,7 +98,6 @@ class NewsList extends Component {
       if (defaultQuery) {
         this.setState({ searchKey: defaultQuery, query: defaultQuery, page: 0, results: {} });
         this.fetchSearchTopStories(defaultQuery, DEFAULT_PAGE);
-        // this.onSearchSubmit({preventDefault: () => {}});
       }
     }
   }

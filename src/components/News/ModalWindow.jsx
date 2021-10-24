@@ -12,7 +12,6 @@ const customStyles = {
   },
 };
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 if (process.env.NODE_ENV !== 'test') Modal.setAppElement("#root");
 
 function ModalWindow({ onSave, searchKey, resultQuery, tagsList, queryId }) {
@@ -23,12 +22,6 @@ function ModalWindow({ onSave, searchKey, resultQuery, tagsList, queryId }) {
     setIsOpen(true);
     setTitle("");
   }
-
-  // function afterOpenModal() {
-  //   // references are now sync'd and can be accessed.
-  //   subtitle.style.color = '#f00';
-  // }
-
   function closeModal() {
     setIsOpen(false);
   }
@@ -53,16 +46,11 @@ function ModalWindow({ onSave, searchKey, resultQuery, tagsList, queryId }) {
 
   return (
     <span>
-      {/* <button onClick={openModal}>Open Modal</button> */}
-      {/* <button onClick={() => onSave(value ? value : 'all')}>
-        <i className="fa fa-heart" aria-hidden="true"></i>
-      </button> */}
       <button onClick={() => openModal()}>
         <i className="fa fa-heart" aria-hidden="true"></i>
       </button>
       <Modal
         isOpen={modalIsOpen}
-        // onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
